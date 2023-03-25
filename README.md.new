@@ -1,0 +1,22 @@
+# ControlNet-halle
+
+## 记录
+
+2023.3.25 
+
+现在先用来记录实践过程中遇到的问题
+
+遇到了pip的依赖版本有问题，有些库已经在源里找不到了，所以会修改一些environment.yaml
+
+因为再次运行`conda env create -f environment.yaml`会报错说已经存在这个环境了，所以就准备把pip的环境独立写进一个文件`pip-requirement.txt`.
+
+改完后的pip依赖用法
+`pip install -r pip-requirement.txt`
+
+发现autodl.com的容器的默认的镜像源是华为的，所以记录一下，版本问题可能和镜像源的不同也有关（感觉应该关系不大）
+
+<pre>
+root@autodl-container-8fb311873c-6e6bf1fb:~/controlnet/ControlNet# pip config list
+global.index-url='https://repo.huaweicloud.com/repository/pypi/simple'
+global.trusted-host='https://repo.huaweicloud.com'
+</pre>
